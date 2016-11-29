@@ -1,0 +1,90 @@
+.song-header-wrapper, .song-menu-wrapper{
+	position: relative;
+	height: em(42);
+	text-align: center;
+}
+
+.song-header-wrapper {
+	background: $primaryColor;
+
+	&.artist.step-2, &.artist.step-3 {
+		.return-step {
+			display: block;
+		}
+	}
+}
+
+.current-title {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -85px;
+	width: 170px;
+	height: 42px;
+
+	svg {
+		width: 100%;
+		height: 100%;
+		fill: #FFF;
+	}
+}
+
+.return-step {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 42px;
+	height: 42px;
+	padding: 3px;
+
+	svg {
+		width: 100%;
+		height: 100%;
+		fill: #FFF;
+	}
+}
+
+.song-menu-wrapper {
+	background: #FFF;
+	border-bottom: 1px solid $grey3 - 20;
+
+	li {
+		width: 25%;
+		float: left;
+	}
+
+	a {
+		display: block;
+		height: em(42);
+		font-size: em(16);
+		line-height: 1;
+		padding-top: em(10);
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 21%;
+		height: em(3);
+		margin: 0 2%;
+		background: $primaryColor;
+		bottom: 0;
+		left: 0;
+		z-index: 3;
+		transition: left .3s;
+	}
+
+	&.playlist:after {
+		left: 25%;
+	}
+
+	&.history:after {
+		left: 50%;
+	}
+
+	&.search:after {
+		left: 75%;
+	}
+}

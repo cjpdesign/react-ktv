@@ -1,0 +1,84 @@
+.messageWrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: RGBA(0,0,0,.8);
+	transition: .3s;
+
+	&.show {
+		z-index:99;
+		opacity: 1;
+	}
+
+	&.hide {
+		z-index: -1;
+		opacity: 0;
+	}
+}
+
+.messagePanel {
+	width: 280px;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -140px;
+	margin-top: -100px;
+	background: #FFF;
+	border-radius: 8px;
+	text-align: center;
+	
+	h1 {
+		font-size: 1.2rem;
+		margin-bottom: .7rem;
+		margin-top: em(24);
+	}
+
+	h2 {
+		border-bottom: 1px solid #CCC;
+		padding-bottom: em(10);
+	}
+
+	h3 {
+		padding-top: em(10);
+		padding-bottom: em(5);
+	}
+
+	a {
+		display: block;
+		width: 50%;
+		height: 52px;
+		position: absolute;
+		bottom:0;
+		padding-top: 5px;
+		text-align: center;
+
+		&.yesBtn {
+			right: 0;
+			background: $primaryColor;
+			border-radius: 0 0 8px 0;
+
+			svg {
+				fill: #FFF;
+			}
+		}
+		
+		&.noBtn {
+			left: 0;
+			background: $tertiaryColor;
+			border-radius: 0 0 0 8px;
+
+			svg{
+				fill: #FFF;
+			}
+		}
+
+		svg{
+			display: inline-block;
+			width: 42px;
+			height: 42px;
+		}
+	}
+}

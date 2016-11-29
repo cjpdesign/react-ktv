@@ -1,0 +1,88 @@
+.song-controller-wrapper {
+	position: absolute;
+	position: relative;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: em(72);
+	text-align: center;
+	font-size: em(12);
+	background: #FFF;
+	z-index: 10;
+	box-shadow: 0px 0px 1px RGBA(0,0,0,.4);
+
+	.main-controller {
+		z-index: 2;
+		background: #FFF;
+		@media (max-width: em(840)) {
+			position: absolute;
+		}
+	}
+
+	.audio-controller {
+		z-index: 1;
+		background: #FFF;
+		transition: transform .5s;
+		transform: translateY(0);
+
+		@media (max-width: em(840)) {
+			position: absolute;
+			top: 0;
+			border-top: 1px solid $grey3 - 20;
+			border-bottom: 1px solid $grey1 - 20;
+			background: $grey1 + 5;
+
+			&.active {
+				transform: translateY(-100%);
+			}
+		}
+	}
+
+	ul {
+		height: em(72);
+		display: inline;
+
+		@media (max-width: em(840)) {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	li {
+		display: inline-block;
+		width: 25%;
+		max-width: em(120);
+	}
+
+	a {
+		display: block;
+		margin-top: em(8);
+	}
+
+	svg {
+		display: inline-block;
+	}
+
+	span {
+		display: block;
+		margin-top: em(2);
+	}
+
+	.more-btn {
+		display: none;
+
+		svg {
+			transition: transform .5s;
+		}
+
+		@media (max-width: em(840)) {
+			display: inline-block;
+		}
+
+		&.active {
+			svg {
+				transform: rotate(270deg);
+			}
+		}
+	}
+}

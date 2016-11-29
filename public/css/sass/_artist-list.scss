@@ -1,0 +1,228 @@
+.list-wrapper {
+	position: relative;
+	overflow: hidden;
+	height: calc(100vh - 156px);
+
+	&.artist {
+		.artist-main-wapper {
+			z-index: 4;
+		}
+	}
+
+	&.playlist {
+		.play-list-wrapper {
+			z-index: 4;
+		}
+	}
+
+	&.history {
+		.history-list-wrapper {
+			z-index: 4;
+		}
+	}
+
+	&.search {
+		.search-list-wrapper {
+			z-index: 4;
+		}
+	}
+}
+
+.artist-main-wapper {
+	position: relative;
+	z-index: 3;
+
+	@media (max-width: em(1024)) {
+		position: absolute;
+		width: 300%;
+		transition: transform .5s;
+
+		&.step-1 {
+			transform: translateX(0);
+		}
+
+		&.step-2 {
+			transform: translateX(-33.33333%);
+		}
+
+		&.step-3 {
+			transform: translateX(-66.66666%);
+		}
+	}
+}
+
+.list-scroll {
+	float: left;
+	height: calc(100vh - 156px);
+	width: 33.33333%;
+
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+
+	&.song-list-wrapper {
+		background: $grey1;
+	}
+
+	&.artist-list-wrapper {
+		background: $grey2;
+	}
+
+	&.category-list-wrapper {
+		background: $grey3;
+	}
+
+	ul {
+		border: 2px solid transparent;
+	}
+
+
+	li {
+		position: relative;
+		width: 100%;
+		border: 2px solid transparent;
+		overflow: hidden;
+	}
+
+	.list-el-wrap {
+		position: relative;
+		display: block;
+		padding: em(10);
+		background: #FFF;
+		z-index: 3;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+
+	.photo {
+		width: 42px;
+		height: 42px;
+		overflow: hidden;
+		border-radius: 50%;
+		position: absolute;
+		top: 50%;
+		margin-top: -21px;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.info {
+		margin-left: em(54);
+	}
+}
+
+.drag-wrapper {
+	cursor: pointer;
+
+	&.command-both {
+		padding-left: em(5);
+		padding-right: em(5);
+	}
+
+	&.command-left {
+		padding-left: em(5);
+	}
+
+	&.command-right {
+		padding-left: em(5);
+		padding-right: em(5);
+	}
+}
+
+// --------------------
+// Delete Song
+// --------------------
+
+.song-delete-symbol {
+	position: absolute;
+	z-index:2;
+	top:0;
+	right:0;
+	width: 50%;
+	height: 100%;
+	background: $tertiaryColor;
+
+	svg {
+		position: absolute;
+		top: 50%;
+		right: em(16);
+		margin-top: em(-16);
+		fill: #FFF;
+		border-color:#FFF;
+	}
+}
+
+// --------------------
+// Add Song
+// --------------------
+
+.song-add-symbol, .song-next-symbol, .song-play-symbol {
+	position: absolute;
+	z-index:1;
+	top:0;
+	left:0;
+	width: 50%;
+	height: 100%;
+	
+
+	svg {
+		position: absolute;
+		top: 50%;
+		left: em(16);
+		margin-top: em(-16);
+		fill: #FFF;
+		border-color:#FFF;
+	}
+}
+
+.song-add-symbol {
+	background: $primaryColor;
+}
+
+.song-next-symbol {
+	background: $secondaryColor;
+}
+
+.song-play-symbol {
+	background: $grey3;
+}
+
+.category-list-wrapper {
+	h2 {
+		padding: em(8) 0;
+	}
+}
+
+.play-list-wrapper, .history-list-wrapper, .search-list-wrapper, .search-list-wrapper .list-scroll {
+	position: absolute;
+	float: none;
+	width: 100%;
+	background: $grey1;
+}
+
+.play-list-wrapper {
+	z-index: 2;
+}
+
+.history-list-wrapper {
+	z-index: 1;
+}
+
+.search-list-wrapper {
+	z-index: 0;
+}
+
+.empty-data {
+	margin: 4px;
+	padding: 20px;
+	text-align: center;
+	background: #FFF;
+}
+
+.playStatus {
+	background-color: $secondaryColor;
+	color: #FFF;
+	margin-left: em(5);
+	font-weight: bold;
+}

@@ -1,0 +1,8 @@
+*.log
+#npm packages
+node_modules/
+npm-debug.log
+*.DS_Store
+song/
+songData.json
+songArtists.json
